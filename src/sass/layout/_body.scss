@@ -1,0 +1,28 @@
+@use "../abstracts/abstracts" as ab;
+
+main {
+  background-image: url(../img/circles.svg);
+  background-repeat: no-repeat;
+  background-position: top 960px  right -350px;
+  background-size: 600px;
+
+  @include ab.breakpoint(tablet){
+    background-position: top 900px  right -380px;
+  }
+}
+
+body {
+    background-color: ab.$black;
+    color:white;
+    background-image: url(../img/circles.svg), url(../img/Oval.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 200px left -200px, top 330px right -220px;
+    background-size: 400px 160px;
+
+    @include ab.breakpoint(tablet){
+    background-image: url(../img/circles.svg);
+    background-repeat: no-repeat;
+    background-position: top 70px left -400px;
+    background-size: 600px;
+    }
+}

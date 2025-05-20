@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as var;
+
+
+@mixin link(){
+  color: white;
+  text-transform: uppercase;
+  text-decoration-color: var.$green;
+  text-underline-offset: 15px;
+  letter-spacing: 2.2px; 
+
+  @content;
+}
+
+
+
+// REPONSIVE LAYOUT
+@mixin breakpoint($bp) {
+  
+  @if $bp == tablet {
+    // Cuando el ancho sea mayor o igual el valor de $bp-tablet que en este caso es 768px
+    @media (width >= var.$bp-tablet) {
+      @content;
+    }
+    
+  }
+  @if $bp == tablethorizontal {
+    @media (width >= var.$bp-tablet-horizontail) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (width >= var.$bp-desktop) {
+      @content;
+    }
+  }
+
+  @if $bp == desktopxl {
+    @media (width >= var.$bp-desktop-xl) {
+      @content;
+    }
+  }
+
+
+}

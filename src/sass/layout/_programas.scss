@@ -1,0 +1,64 @@
+@use "../abstracts/abstracts" as ab;
+.programas {
+    margin-bottom: 70px;
+  & .container {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      background-color: ab.$grey_light;
+    }
+  
+      &::after {
+      content: "";
+      position: absolute;
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      background-color: ab.$grey_light;
+    }
+  
+    & .programas_items {
+      text-align: center;
+      margin-bottom: 40px;
+      margin-top: 40px;
+  
+      &-title {
+        font-size: 30px;
+        font-weight: 900;
+      }
+  
+      &-description {
+        color: ab.$grey_light
+      }
+    }
+
+    @include ab.breakpoint(tablet){
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include ab.breakpoint(desktop){
+      grid-template-columns: repeat(3, 1fr);
+
+      & .programas_items {
+        &-title {
+          font-size: 40px;
+          font-weight: 900;
+        }
+  
+        &-description {
+          font-size: 20px;
+        }
+      }
+    }
+
+  }
+
+
+}

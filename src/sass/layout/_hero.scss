@@ -1,0 +1,80 @@
+@use "../abstracts/abstracts" as ab;
+
+
+.hero {
+  margin-bottom: 50px;
+  &_info {
+    text-align: center;
+    & h1 {
+        font-size: 40px;
+        font-weight: 900;
+        margin-bottom: 30px;
+        & span {
+            border-bottom: 4px solid ab.$green;
+        }
+    }
+
+    & p {
+       color: ab.$grey_light;
+       font-size: 16px;
+       margin-bottom: 30px
+    }
+
+    & a {
+        @include ab.link();
+    }
+  }
+
+  @include ab.breakpoint(tablet){
+    height: 500px;
+    &_info {
+      text-align: left;
+      position: relative;
+      
+      &::before{
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 600px;
+        background-color: ab.$gray;
+        background-image: url(../img/Imagen_ang.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 400px;
+        top: -180px;
+        right: -30px;
+        z-index: -5;
+        pointer-events: none;
+      }
+  
+      & h1 {
+       width: 65%;
+       font-size: 50px;
+       margin-bottom: 60px;
+      }
+      & p {
+        width: 65%;
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include ab.breakpoint(desktop){
+    height: 600px;
+    &_info {
+      &::before {
+        width: 500px;
+        height: 700px;
+        background-size: 500px;
+      }
+      h1 {
+        font-size: 60px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
