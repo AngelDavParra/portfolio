@@ -6,7 +6,10 @@
   text-transform: uppercase;
   text-decoration-color: var.$green;
   text-underline-offset: 15px;
-  letter-spacing: 2.2px; 
+  letter-spacing: 2.2px;
+  &:hover{
+    color: var.$green
+  }
 
   @content;
 }
